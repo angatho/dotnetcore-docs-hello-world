@@ -20,7 +20,7 @@
     try {
       const response = await fetch("/api/ping");
       const data = await response.json();
-      result.textContent = `✅ ${data.status} @ ${data.time}`;
+      result.textContent = `✅ ${data.status} @@ ${data.time}`;
     } catch (err) {
       result.textContent = "❌ Error calling API";
     }
