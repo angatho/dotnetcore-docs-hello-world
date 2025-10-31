@@ -1,8 +1,4 @@
 ﻿@page
-@model IndexModel
-@{    
-    ViewData["Title"] = "Home page";
-}
 <script
     src="https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js"
     type="text/javascript">
@@ -18,12 +14,22 @@
       env: 'staging',
       // Specify a version number to identify the deployed version of your application in Datadog
       // version: '1.0.0',
+      allowedTracingUrls: [
+        "https://dotnetappservice-bfdjdjfehkf2aqak.australiasoutheast-01.azurewebsites.net/"
+      ],
       sessionSampleRate: 100,
-      sessionReplaySampleRate: 20,
+      sessionReplaySampleRate: 100,
       trackBfcacheViews: true,
+      trackResources: true,
+      trackLongTasks: true,
+      trackUserInteractions: true,
       defaultPrivacyLevel: 'mask-user-input',
     });
 </script>
+@model IndexModel
+@{    
+    ViewData["Title"] = "Home page";
+}
 
 <div class="jumbotron">
     <h1>.NET 💜 Azure</h1>
