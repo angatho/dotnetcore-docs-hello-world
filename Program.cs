@@ -36,4 +36,13 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+app.MapGet("/api/ping", () =>
+{
+    return Results.Ok(new
+    {
+        status = "ok",
+        time = DateTime.UtcNow
+    });
+});
+
 app.Run();
